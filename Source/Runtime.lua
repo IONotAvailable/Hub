@@ -5,8 +5,9 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 
 -- Imports
-local Module = import(readfile("xGamer626Parkour/Modules/Module.lua"))
-print(Module)
+-- local Module = import(readfile("xGamer626Parkour/Modules/Module.lua"))
+-- print(Module)
+print("A")
 
 -- Runtime
 local Runtime = {

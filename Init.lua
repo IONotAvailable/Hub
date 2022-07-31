@@ -14,19 +14,19 @@ local function Import_Files()
     -- Make the files.
     writefile("xGamer626Parkour/Modules/Module.lua", game:HttpGetAsync("https://raw.githubusercontent.com/xgamerman626/Hub/main/Modules/Module.lua"))
     writefile("xGamer626Parkour/Source/Runtime.lua", game:HttpGetAsync("https://raw.githubusercontent.com/xgamerman626/Hub/main/Source/Runtime.lua"))
-
-    -- Write to the files.
 end
 
 local function Init()
     Import_Files()
 
     repeat
-        wait()
+        wait(0.01)
     until isfile("xGamer626Parkour/Source/Runtime.lua")
 
-    local Runtime = readfile("xGamer626Parkour/Source/Runtime.lua")
-    Runtime:Init()
+    loadfile("xGamer626Parkour/Source/Runtime.lua")
+    -- local Runtime = require("./Source/Runtime.lua")
+    -- print(Runtime)
+    -- Runtime:Init()
 end
 
 -- Main
