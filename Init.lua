@@ -25,7 +25,8 @@ local function Init()
         wait(0.01)
     until isfile("xGamer626Parkour/Source/Runtime.lua")
 
-    loadstring(readfile("xGamer626Parkour/Source/Runtime.lua"))()
+    local Runtime = dofile("xGamer626Parkour/Source/Runtime.lua")
+    Runtime.Init()
 end
 
 -- Main

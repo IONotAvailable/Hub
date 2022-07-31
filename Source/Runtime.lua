@@ -5,7 +5,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 
 -- Imports
-local Module = import("Modules/Module.lua")
+local Module = dofile("xGamer626Parkour/Modules/Module.lua")
 print(Module.H)
 
 -- Runtime
@@ -15,8 +15,8 @@ local function Variables()
     getgenv().Stepped = nil
 end
 
-local function Init()
+function Runtime.Init()
     print("Runtime was initialized")
 end
 
-Init()
+return Runtime
