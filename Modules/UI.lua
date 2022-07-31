@@ -2,7 +2,7 @@ local UI = {}
 
 -- Variables
 local Library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Parkour by xgamer626#1683", HidePremium = true})
+local Window = Library:MakeWindow({Name = "Parkour by xgamer626#1683", HidePremium = true})
 
 local Combo_Tab = Window:MakeTab({
 	Name = "Combo",
