@@ -1,9 +1,3 @@
--- Services
-local HttpService = game:GetService("HttpService")
-
--- Variables
-local Version = game
-
 -- Functions
 local function Import_Files()
     -- Check for folder.
