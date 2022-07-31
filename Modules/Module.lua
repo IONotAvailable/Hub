@@ -1,1 +1,1 @@
-return "Hi"
+print("Hi")

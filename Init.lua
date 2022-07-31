@@ -23,8 +23,7 @@ local function Init()
         wait(0.01)
     until isfile("xGamer626Parkour/Source/Runtime.lua")
 
-    local Runtime = loadstring(readfile("xGamer626Parkour/Source/Runtime.lua"))()
-    Runtime:Init()
+    loadstring(readfile("xGamer626Parkour/Source/Module.lua"))()
 end
 
 -- Main
