@@ -4,6 +4,8 @@ local function Import_Files()
     if isfolder("xGamer626Parkour") then
         -- If there is a folder then remove it to update it to current version.
         delfolder("xGamer626Parkour")
+        Import_Files()
+        return
     end
 
     -- Make the folders.
@@ -23,7 +25,7 @@ local function Init()
         wait(0.01)
     until isfile("xGamer626Parkour/Source/Runtime.lua")
 
-    loadstring(readfile("xGamer626Parkour/Source/Module.lua"))()
+    loadstring(readfile("xGamer626Parkour/Source/Runtime.lua"))()
 end
 
 -- Main
