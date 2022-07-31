@@ -10,15 +10,21 @@ local Combo_Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-local Movement_Tab = Window:MakeTab({
-	Name = "Movement",
+local Gearless_Tab = Window:MakeTab({
+	Name = "Gearless",
 	Icon = "rbxassetid://3152629574",
 	PremiumOnly = false
 })
 
-local Audio_Tab = Window:MakeTab({
-	Name = "Audio",
-	Icon = "rbxassetid://9743254397",
+local Grappler_Tab = Window:MakeTab({
+	Name = "Grappler",
+	Icon = "rbxassetid://10433869992",
+	PremiumOnly = false
+})
+
+local Magrail_Tab = Window:MakeTab({
+	Name = "Magrail",
+	Icon = "rbxassetid://10433893948",
 	PremiumOnly = false
 })
 
@@ -31,6 +37,12 @@ local Cola_Tab = Window:MakeTab({
 local Adrenaline_Tab = Window:MakeTab({
 	Name = "Adrenaline",
 	Icon = "rbxassetid://9744692070",
+	PremiumOnly = false
+})
+
+local Audio_Tab = Window:MakeTab({
+	Name = "Audio",
+	Icon = "rbxassetid://9743254397",
 	PremiumOnly = false
 })
 
@@ -207,7 +219,8 @@ function UI.Init()
         end
     })
     
-    
+    Grappler_Tab:AddLabel("WIP")
+    Magrail_Tab:AddLabel("WIP")
     Cola_Tab:AddLabel("WIP")
     Audio_Tab:AddLabel("WIP")
 end

@@ -19,16 +19,23 @@ function Variables()
         Player_Notifcation = nil,
     }
     getgenv().Toggles = {
-
+        
     }
     getgenv().Sliders = {
 
+    }
+    getgenv().ACB = {
+        Remotes = {},
+        Metatable = getrawmetatable(game),
+        Old = getgenv().ACB.Metatable.__namecall,
     }
 end
 
 function Runtime.Init()
     -- Set/Reset our global environmental variables.
     Variables()
+
+    -- Run the Anticheat Bypass
 
     -- Set/Reset the User Interface
     UI.Init()
