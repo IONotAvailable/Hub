@@ -15,7 +15,8 @@ local Runtime = {
     },
 }
 
--- Setting up RenderStepped
--- Runtime.Variables.Stepped = RunService.RenderStepped:Connect(function(Step)
+function Runtime:Init()
+    print("Runtime was initialized.")
+end
 
--- end)
+return Runtime

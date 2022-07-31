@@ -20,6 +20,13 @@ end
 
 local function Init()
     Import_Files()
+
+    repeat
+        wait()
+    until isfile("xGamer626Parkour/Source/Runtime.lua")
+
+    local Runtime = readfile("xGamer626Parkour/Source/Runtime.lua")
+    Runtime:Init()
 end
 
 -- Main
