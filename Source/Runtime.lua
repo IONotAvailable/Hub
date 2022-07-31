@@ -20,6 +20,9 @@ function Variables()
     getgenv().Toggles = {
 
     }
+    getgenv().Sliders = {
+        
+    }
 end
 
 function Runtime.Init()
