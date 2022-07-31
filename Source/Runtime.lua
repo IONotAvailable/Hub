@@ -5,18 +5,31 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 
 -- Imports
-local Module = dofile("xGamer626Parkour/Modules/Module.lua")
-print(Module.H)
+local UI = dofile("xGamer626Parkour/Modules/UI.lua")
+local ACB = dofile("xGamer626Parkour/Modules/ACB.lua")
 
 -- Runtime
 local Runtime = {}
 
-local function Variables() 
-    getgenv().Stepped = nil
+function Variables()
+    getgenv().Connections = {
+        Stepped = nil,
+        Staff_Notifcation = nil,
+        Player_Notifcation = nil,
+    }
+    getgenv().Toggles = {
+
+    }
 end
 
 function Runtime.Init()
-    print("Runtime was initialized")
+    -- Set/Reset our global environmental variables.
+    Variables()
+
+    -- Set/Reset our Connections
+    getgenv().Connections.Stepped = RunService.RenderStepped:Connect(function()
+        
+    end)
 end
 
 return Runtime

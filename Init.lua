@@ -14,7 +14,8 @@ local function Import_Files()
     makefolder("xGamer626Parkour/Source")
 
     -- Make the files.
-    writefile("xGamer626Parkour/Modules/Module.lua", game:HttpGetAsync("https://raw.githubusercontent.com/xgamerman626/Hub/main/Modules/Module.lua"))
+    writefile("xGamer626Parkour/Modules/UI.lua", game:HttpGetAsync("https://raw.githubusercontent.com/xgamerman626/Hub/main/Modules/UI.lua"))
+    writefile("xGamer626Parkour/Modules/ACB.lua", game:HttpGetAsync("https://raw.githubusercontent.com/xgamerman626/Hub/main/Modules/ACB.lua"))
     writefile("xGamer626Parkour/Source/Runtime.lua", game:HttpGetAsync("https://raw.githubusercontent.com/xgamerman626/Hub/main/Source/Runtime.lua"))
 end
 
@@ -22,7 +23,7 @@ local function Init()
     Import_Files()
 
     repeat
-        wait(0.01)
+        task.wait()
     until isfile("xGamer626Parkour/Source/Runtime.lua")
 
     local Runtime = dofile("xGamer626Parkour/Source/Runtime.lua")
