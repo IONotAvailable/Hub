@@ -23,10 +23,8 @@ local function Init()
         wait(0.01)
     until isfile("xGamer626Parkour/Source/Runtime.lua")
 
-    loadfile("xGamer626Parkour/Source/Runtime.lua")
-    -- local Runtime = require("./Source/Runtime.lua")
-    -- print(Runtime)
-    -- Runtime:Init()
+    local Runtime = loadstring(readfile("xGamer626Parkour/Source/Runtime.lua"))()
+    Runtime:Init()
 end
 
 -- Main

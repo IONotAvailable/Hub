@@ -16,7 +16,7 @@ local Runtime = {
     },
 }
 
-function Runtime:Init()
+Runtime.Init = function()
     print("Runtime was initialized.")
 end
 
