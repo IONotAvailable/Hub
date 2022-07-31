@@ -5,8 +5,9 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 
 -- Imports
-local UI = dofile("xGamer626Parkour/Modules/UI.lua")
-local ACB = dofile("xGamer626Parkour/Modules/ACB.lua")
+local UI = loadstring(readfile("xGamer626Parkour/Modules/UI.lua"))()
+local ACB = loadstring(readfile("xGamer626Parkour/Modules/ACB.lua"))()
+
 
 -- Runtime
 local Runtime = {}
@@ -21,13 +22,16 @@ function Variables()
 
     }
     getgenv().Sliders = {
-        
+
     }
 end
 
 function Runtime.Init()
     -- Set/Reset our global environmental variables.
     Variables()
+
+    -- Set/Reset the User Interface
+    UI.Init()
 
     -- Set/Reset our Connections
     getgenv().Connections.Stepped = RunService.RenderStepped:Connect(function()
