@@ -12,7 +12,8 @@ local function Import_Files()
     makefolder("xGamer626Parkour/Source")
 
     -- Make the files.
-    writefile("xGamer626Parkour/Source/Runtime.lua", game:HttpGetAsync("https://raw.githubusercontent.com/xgamerman626/Hub/main/Source/Runtime.lua?token=GHSAT0AAAAAABXEWDOSBBDXLPWEYWGTKZLYYXGBDEA"))
+    writefile("xGamer626Parkour/Modules/Module.lua", game:HttpGetAsync("https://raw.githubusercontent.com/xgamerman626/Hub/main/Modules/Module.lua"))
+    writefile("xGamer626Parkour/Source/Runtime.lua", game:HttpGetAsync("https://raw.githubusercontent.com/xgamerman626/Hub/main/Source/Runtime.lua"))
 
     -- Write to the files.
 end
