@@ -6,6 +6,7 @@ local RunService = game:GetService("RunService")
 
 -- Imports
 local Module = loadstring(readfile("Modules/Module.lua"))
+print(Module)
 
 -- Runtime
 local Runtime = {}
