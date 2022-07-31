@@ -5,14 +5,14 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 
 -- Imports
-
+local Module = import("Modules/Module.lua")
 
 -- Runtime
-local Runtime = {
-    Variables = {
-        getgenv().Stepped = nil,
-    },
-}
+local Runtime = {}
+
+local function Variables() 
+    getgenv().Stepped = nil
+end
 
 local function Init()
     print("Runtime was initialized")
