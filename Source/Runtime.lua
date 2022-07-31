@@ -19,7 +19,7 @@ function Variables()
         Player_Notifcation = nil,
     }
     getgenv().Toggles = {
-        
+
     }
     getgenv().Sliders = {
 
@@ -27,7 +27,7 @@ function Variables()
     getgenv().ACB = {
         Remotes = {},
         Metatable = getrawmetatable(game),
-        Old = getgenv().ACB.Metatable.__namecall,
+        --Old = getgenv().ACB.Metatable.__namecall,
     }
 end
 
