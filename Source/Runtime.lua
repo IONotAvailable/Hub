@@ -23,8 +23,13 @@ function Variables()
         Infinite_Magrail = false,
         Infinite_Grappler = false,
         Infinite_Adrenaline = false,
+
         Flow_Active = false,
         Combo_Level = false,
+
+        Ammo_Reset = false,
+        Slide_Speed = false
+
         God_Mode = false,
         Anti_Trail = false,
         Anti_Dunce = false,

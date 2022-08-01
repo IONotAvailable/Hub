@@ -99,8 +99,10 @@ function UI.Init()
         Name = "Ammo Reset",
         Default = Enum.KeyCode.F,
         Hold = false,
-        Callback = function(Value)
-            print(Value)
+        Callback = function()
+            game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Jumping")
+			task.wait()
+			game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState("Seated")
         end    
     })
     
@@ -108,8 +110,12 @@ function UI.Init()
         Name = "Slide Speed",
         Default = Enum.KeyCode.C,
         Hold = false,
-        Callback = function(Value)
-            print(Value)
+        Callback = function()
+            if getgenv().Toggles.Slide_Speed == true then
+                getgenv().Toggles.Slide_Speed = false
+            elseif getgenv().Toggles.Slide_Speed == false then
+                getgenv().Toggles.Slide_Speed = true
+            end
         end    
     })
     
