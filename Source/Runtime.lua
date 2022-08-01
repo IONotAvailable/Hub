@@ -28,7 +28,7 @@ function Variables()
         Combo_Level = false,
 
         Ammo_Reset = false,
-        Slide_Speed = false
+        Slide_Speed = false,
 
         God_Mode = false,
         Anti_Trail = false,
