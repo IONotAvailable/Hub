@@ -36,6 +36,7 @@ function Runtime.Init()
     Variables()
 
     -- Run the Anticheat Bypass
+    ACB.Init()
 
     -- Set/Reset the User Interface
     UI.Init()
