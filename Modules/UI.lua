@@ -70,7 +70,7 @@ function UI.Init()
         Name = "Set Flow",
         Default = false,
         Callback = function(Value)
-
+            getgenv().Toggles.Flow_Active = Value
         end    
     })
     
@@ -78,7 +78,7 @@ function UI.Init()
         Name = "Set Combo",
         Default = false,
         Callback = function(Value)
-
+            getgenv().Toggles.Combo_Level = Value
         end    
     })
     
@@ -91,38 +91,29 @@ function UI.Init()
         Increment = 1,
         ValueName = nil,
         Callback = function(Value)
-
+            getgenv().Sliders.Combo_Level = Value
         end    
     })
-    
-    
-    Movement_Tab:AddToggle({
-        Name = "Ammo Reset",
-        Default = false,
-        Callback = function(Value)
 
-        end    
-    })
-    
-    Movement_Tab:AddBind({
+    Gearless_Tab:AddBind({
         Name = "Ammo Reset",
         Default = Enum.KeyCode.F,
         Hold = false,
-        Callback = function()
-
+        Callback = function(Value)
+            print(Value)
         end    
     })
     
-    Movement_Tab:AddBind({
+    Gearless_Tab:AddBind({
         Name = "Slide Speed",
         Default = Enum.KeyCode.C,
         Hold = false,
-        Callback = function()
-
+        Callback = function(Value)
+            print(Value)
         end    
     })
     
-    Movement_Tab:AddSlider({
+    Gearless_Tab:AddSlider({
         Name = "Slide Speed",
         Min = 1,
         Max = 1000,
@@ -131,16 +122,16 @@ function UI.Init()
         Increment = 5,
         ValueName = nil,
         Callback = function(Value)
-
+            getgenv().Sliders.Slide_Speed = Value
         end    
     })
     
     
     Adrenaline_Tab:AddToggle({
-        Name = "Inf Adrenaline",
+        Name = "Infinite Adrenaline",
         Default = false,
         Callback = function(Value)
-
+            getgenv().Toggles.Infinite_Adrenaline = Value
         end    
     })
     
@@ -162,7 +153,7 @@ function UI.Init()
         Name = "God Mode",
         Default = false,
         Callback = function(Value)
-
+            getgenv().Toggles.God_Mode = Value
         end    
     })
     
@@ -170,7 +161,7 @@ function UI.Init()
         Name = "Anti Dunce",
         Default = false,
         Callback = function(Value)
-
+            getgenv().Toggles.Anti_Dunce = Value
         end    
     })
     
@@ -178,7 +169,7 @@ function UI.Init()
         Name = "Anti Trail",
         Default = false,
         Callback = function(Value)
-           
+            getgenv().Toggles.Anti_Trail = Value
         end    
     })
     
@@ -186,39 +177,49 @@ function UI.Init()
         Name = "Staff Notifier",
         Default = true,
         Callback = function(Value)
-            
+            getgenv().Toggles.Staff_Notifications = Value
         end    
     })
-    
-    Audio_Tab:AddToggle({
-        Name = "No Wind",
+
+    Notifcations_Tab:AddToggle({
+        Name = "Player Notifier",
         Default = false,
         Callback = function(Value)
-            
+            getgenv().Toggles.Player_Notifications = Value
         end    
     })
     
-    Automatic_Tab:AddButton({
-        Name = "Herbal Run",
-        Callback = function()
+    -- Audio_Tab:AddToggle({
+    --     Name = "No Wind",
+    --     Default = false,
+    --     Callback = function(Value)
             
-        end
-    })
+    --     end    
+    -- })
     
-    Automatic_Tab:AddButton({
-        Name = "The Arch",
-        Callback = function()
+    -- Automatic_Tab:AddButton({
+    --     Name = "Herbal Run",
+    --     Callback = function()
             
-        end
-    })
+    --     end
+    -- })
     
-    Automatic_Tab:AddButton({
-        Name = "Vertex Tower",
-        Callback = function()
+    -- Automatic_Tab:AddButton({
+    --     Name = "The Arch",
+    --     Callback = function()
             
-        end
-    })
+    --     end
+    -- })
     
+    -- Automatic_Tab:AddButton({
+    --     Name = "Vertex Tower",
+    --     Callback = function()
+            
+    --     end
+    -- })
+    
+    Audio_Tab:AddLabel("WIP")
+    Automatic_Tab:AddLabel("WIP")
     Grappler_Tab:AddLabel("WIP")
     Magrail_Tab:AddLabel("WIP")
     Cola_Tab:AddLabel("WIP")

@@ -19,15 +19,30 @@ function Variables()
         Player_Notifcation = nil,
     }
     getgenv().Toggles = {
+        Infinite_Wallboost = false,
+        Infinite_Magrail = false,
+        Infinite_Grappler = false,
+        Infinite_Adrenaline = false,
+        Flow_Active = false,
+        Combo_Level = false,
+        God_Mode = false,
+        Anti_Trail = false,
+        Anti_Dunce = false,
 
+        Staff_Notifications = false,
+        Player_Notifications = false,
     }
     getgenv().Sliders = {
-
+        Slide_Speed = 1,
+        Combo_Level = 1,
     }
     getgenv().ACB = {
         Remotes = {},
         Metatable = getrawmetatable(game),
         --Old = getgenv().ACB.Metatable.__namecall,
+    }
+    getgenv().Other = {
+        Stimmed = false,
     }
 end
 
