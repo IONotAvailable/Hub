@@ -30,7 +30,7 @@ function ACB.Init()
             for Name, Func in pairs(FuncTable) do
                 for _, Remote in pairs(debug.getupvalues(Func)) do
                     if Remote.ClassName == 'RemoteEvent' then
-                        getsenv().ACB.Remotes[Name] = Remote
+                        getgenv().ACB.Remotes[Name] = Remote
                         break
                     end
                 end
@@ -41,16 +41,16 @@ function ACB.Init()
     GMT.__namecall = newcclosure(function(self, ...)
         local Method = getnamecallmethod()
 
-        if Method == "FireServer" and table.find(getsenv().ACB.BanRemotes, self.Name) then
+        if Method == "FireServer" and table.find(getgenv().ACB.BanRemotes, self.Name) then
             return nil
-        elseif Method == "InvokeServer" and table.find(getsenv().ACB.BanRemotes, self.Name) then
+        elseif Method == "InvokeServer" and table.find(getgenv().ACB.BanRemotes, self.Name) then
             return nil
-        elseif Method == "FireServer" and self == getsenv().ACB.Remotes.statAdd then
+        elseif Method == "FireServer" and self == getgenv().ACB.Remotes.statAdd then
             print("statadd return nil")
             return nil
-        elseif Method == "FireServer" and self.Name == "SetTrail" and getsenv().Toggles.Anti_Trail == true then 
+        elseif Method == "FireServer" and self.Name == "SetTrail" and getgenv().Toggles.Anti_Trail == true then 
             return nil
-        elseif Method == "TakeDamage" and self.ClassName and getsenv().Toggles.God_Mode == true then
+        elseif Method == "TakeDamage" and self.ClassName and getgenv().Toggles.God_Mode == true then
             return nil 
         end
 
