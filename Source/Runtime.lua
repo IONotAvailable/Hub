@@ -14,7 +14,7 @@ local Runtime = {}
 
 function Variables()
     getgenv().Connections = {
-        Stepped = nil,
+        Stepped_RunService = nil,
         Staff_Notifcation = nil,
         Player_Notifcation = nil,
     }
@@ -42,9 +42,22 @@ function Variables()
         Combo_Level = 1,
     }
     getgenv().ACB = {
+        BanRemotes = {
+            "FireToDieInstantly",
+            "LoadString",
+            "FlyRequest",
+            "FinishTimeTrial",
+            "UpdateDunceList",
+            "HighCombo",
+            "r",
+            "t",
+            "FF",
+            "SubmitCombo",
+            "UpdateCombo",
+            "LowCombo",
+        },
         Remotes = {},
         Metatable = getrawmetatable(game),
-        --Old = getgenv().ACB.Metatable.__namecall,
     }
     getgenv().Other = {
         Stimmed = false,
@@ -62,7 +75,7 @@ function Runtime.Init()
     UI.Init()
 
     -- Set/Reset our Connections
-    getgenv().Connections.Stepped = RunService.RenderStepped:Connect(function()
+    getgenv().Connections.Stepped_RunService = RunService.RenderStepped:Connect(function()
         
     end)
 end
