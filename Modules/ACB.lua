@@ -9,7 +9,7 @@ local Points_Env = getsenv(Points_Script)
 local Points_EnvIM = rawget(getrawmetatable(Points_Env), "__index")
 local Points_Func = rawget(rawget(Points_EnvIM, "shared"), "triggerPointsFunction")
 
-local GMT = getgenv().ACB.Metatable
+local GMT = getrawmetatable(game)
 setreadonly(GMT, false)
 local OLD = GMT.__namecall
 

@@ -18,7 +18,7 @@ local Gearless_Tab = Window:MakeTab({
 
 local Grappler_Tab = Window:MakeTab({
 	Name = "Grappler",
-	Icon = "rbxassetid://10493783533",
+	Icon = "rbxassetid://10494096196",
 	PremiumOnly = false
 })
 

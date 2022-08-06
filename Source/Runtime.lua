@@ -57,7 +57,6 @@ function Variables()
             "LowCombo",
         },
         Remotes = {},
-        Metatable = getrawmetatable(game),
     }
     getgenv().Other = {
         Stimmed = false,
@@ -67,6 +66,8 @@ end
 function Runtime.Init()
     -- Set/Reset our global environmental variables.
     Variables()
+
+    task.wait(.1)
 
     -- Run the Anticheat Bypass
     ACB.Init()
