@@ -18,13 +18,25 @@ local Gearless_Tab = Window:MakeTab({
 
 local Grappler_Tab = Window:MakeTab({
 	Name = "Grappler",
-	Icon = "rbxassetid://10433869992",
+	Icon = "rbxassetid://10493686822",
 	PremiumOnly = false
 })
 
 local Magrail_Tab = Window:MakeTab({
 	Name = "Magrail",
-	Icon = "rbxassetid://10433893948",
+	Icon = "rbxassetid://10493687634",
+	PremiumOnly = false
+})
+
+local Paraglider_Tab = Window:MakeTab({
+	Name = "Paraglider",
+	Icon = "rbxassetid://10493693841",
+	PremiumOnly = false
+})
+
+local Wingsuit_Tab = Window:MakeTab({
+	Name = "Wingsuit",
+	Icon = "rbxassetid://10493701003",
 	PremiumOnly = false
 })
 
@@ -194,40 +206,14 @@ function UI.Init()
             getgenv().Toggles.Player_Notifications = Value
         end    
     })
-    
-    -- Audio_Tab:AddToggle({
-    --     Name = "No Wind",
-    --     Default = false,
-    --     Callback = function(Value)
-            
-    --     end    
-    -- })
-    
-    -- Automatic_Tab:AddButton({
-    --     Name = "Herbal Run",
-    --     Callback = function()
-            
-    --     end
-    -- })
-    
-    -- Automatic_Tab:AddButton({
-    --     Name = "The Arch",
-    --     Callback = function()
-            
-    --     end
-    -- })
-    
-    -- Automatic_Tab:AddButton({
-    --     Name = "Vertex Tower",
-    --     Callback = function()
-            
-    --     end
-    -- })
+
     
     Audio_Tab:AddLabel("WIP")
     Automatic_Tab:AddLabel("WIP")
     Grappler_Tab:AddLabel("WIP")
     Magrail_Tab:AddLabel("WIP")
+    Paraglider_Tab:AddLabel("WIP")
+    Wingsuit_Tab:AddLabel("WIP")
     Cola_Tab:AddLabel("WIP")
     Audio_Tab:AddLabel("WIP")
 end
