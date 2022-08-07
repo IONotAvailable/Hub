@@ -107,6 +107,38 @@ function UI.Init()
         end    
     })
 
+    Gearless_Tab:AddToggle({
+        Name = "Infinite Wallrun",
+        Default = false,
+        Callback = function(Value)
+            getgenv().Toggles.Infinite_Wallrun = Value
+        end    
+    })
+
+    Gearless_Tab:AddToggle({
+        Name = "Infinite Wallboost",
+        Default = false,
+        Callback = function(Value)
+            getgenv().Toggles.Infinite_Wallboost = Value
+        end    
+    })
+
+    Gearless_Tab:AddToggle({
+        Name = "Infinite Charge",
+        Default = false,
+        Callback = function(Value)
+            getgenv().Toggles.Infinite_Charge = Value
+        end    
+    })
+
+    Gearless_Tab:AddToggle({
+        Name = "Autocatch Zipline",
+        Default = false,
+        Callback = function(Value)
+            getgenv().Toggles.Auto_CatchZipline = Value
+        end    
+    })
+
     Gearless_Tab:AddBind({
         Name = "Ammo Reset",
         Default = Enum.KeyCode.F,
@@ -207,8 +239,14 @@ function UI.Init()
         end    
     })
 
+    Notifcations_Tab:AddToggle({
+        Name = "Bag Notifier",
+        Default = false,
+        Callback = function(Value)
+            getgenv().Toggles.Bag_Notifications = Value
+        end    
+    })
     
-    Audio_Tab:AddLabel("WIP")
     Automatic_Tab:AddLabel("WIP")
     Grappler_Tab:AddLabel("WIP")
     Magrail_Tab:AddLabel("WIP")
