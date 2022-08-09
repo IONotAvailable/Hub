@@ -33,7 +33,8 @@ Features Coming Soon :
 • Infinite Glider Stamina
 • Infinite Magrail Gear
 • Infinite Grappler Gear
-• Instant Grappler Cast                                               
+• Instant Grappler Cast
+• Autofarm Points                                            
 ]]
 
 -- Functions
