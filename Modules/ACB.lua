@@ -46,7 +46,6 @@ function ACB.Init()
         elseif Method == "InvokeServer" and table.find(getgenv().ACB.BanRemotes, self.Name) then
             return nil
         elseif Method == "FireServer" and self == getgenv().ACB.Remotes.statAdd then
-            print("statadd return nil")
             return nil
         elseif Method == "FireServer" and self.Name == "SetTrail" and getgenv().Toggles.Anti_Trail == true then 
             return nil

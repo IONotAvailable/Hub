@@ -107,13 +107,13 @@ function UI.Init()
         end    
     })
 
-    Gearless_Tab:AddToggle({
-        Name = "Infinite Wallrun",
-        Default = false,
-        Callback = function(Value)
-            getgenv().Toggles.Infinite_Wallrun = Value
-        end    
-    })
+    -- Gearless_Tab:AddToggle({
+    --     Name = "Infinite Wallrun",
+    --     Default = false,
+    --     Callback = function(Value)
+    --         getgenv().Toggles.Infinite_Wallrun = Value
+    --     end    
+    -- })
 
     Gearless_Tab:AddToggle({
         Name = "Infinite Wallboost",
