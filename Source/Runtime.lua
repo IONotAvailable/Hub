@@ -8,7 +8,7 @@ local VirtualInputManager = game:GetService("VirtualInputManager")
 -- Imports
 local UI = loadstring(readfile("xGamer626Parkour/Modules/UI.lua"))()
 local ACB = loadstring(readfile("xGamer626Parkour/Modules/ACB.lua"))()
-local Util = loadstring(readfile("xGamer626Parkour/Modules/Util.lua"))
+local Util = loadstring(readfile("xGamer626Parkour/Modules/Util.lua"))()
 
 -- Locals
 local Player = Players.LocalPlayer
