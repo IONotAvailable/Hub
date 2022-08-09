@@ -8,100 +8,18 @@ local VirtualInputManager = game:GetService("VirtualInputManager")
 -- Imports
 local UI = loadstring(readfile("xGamer626Parkour/Modules/UI.lua"))()
 local ACB = loadstring(readfile("xGamer626Parkour/Modules/ACB.lua"))()
-
--- Runtime
-local Runtime = {}
+local Util = loadstring(readfile("xGamer626Parkour/Modules/Util.lua"))
 
 -- Locals
 local Player = Players.LocalPlayer
 local PlayerGui = Player.PlayerGui
 
-function Variables()
-    if getgenv().Activated == true then
-        pcall(function()
-            getgenv().Connections.Stepped_RunService:Disconnect()
-            getgenv().Connections.Staff_Notifcation:Disconnect()
-            getgenv().Connections.Player_Notifcation:Disconnect()
-        end)
-    end
-
-    getgenv().Activated = true
-    getgenv().GameVariables = nil
-    getgenv().Connections = {
-        Input_Began = nil,
-        Stepped_RunService = nil,
-        Staff_Notifcation = nil,
-        Player_Notifcation = nil,
-    }
-    getgenv().Toggles = {
-        -- Audio
-
-        -- Cola
-
-        -- Automatic
-
-        -- Wingsuit
-
-        -- Paraglider
-
-        -- Magrail
-        Infinite_Magrail = false,
-
-        -- Grappler
-        Infinite_Grappler = false,
-
-        -- Adrenaline
-        Infinite_Adrenaline = false,
-
-        -- Combo
-        Flow_Active = false,
-        Combo_Level = false,
-
-        -- Gearless
-        Infinite_Wallrun = false,
-        Infinite_Wallboost = false,
-        Infinite_Charge = false,
-        Auto_CatchZipline = false,
-        Ammo_Reset = false,
-        Slide_Speed = false,
-
-        -- Misc
-        God_Mode = false,
-        Anti_Trail = false,
-        Anti_Dunce = false,
-
-        -- Notifcations
-        Staff_Notifications = false,
-        Player_Notifications = false,
-        Bag_Notifications = false,
-    }
-    getgenv().Sliders = {
-        Slide_Speed = 1,
-        Combo_Level = 1,
-    }
-    getgenv().ACB = {
-        BanRemotes = {
-            "LoadString",
-            "HighCombo",
-            "FF",
-            "SubmitCombo",
-            "UpdateCombo",
-            "LowCombo",
-            "FinishTimeTrial",
-            "UpdateDunceList",
-        },
-        Remotes = {},
-    }
-    getgenv().Other = {
-        Stimmed = false,
-        CanZipline = true,
-    }
-end
-
+-- Runtime
+local Runtime = {}
 
 function Runtime.Init()
     -- Set/Reset our global environmental variables.
-    Variables()
+    Util:Variables()
 
     task.wait(.1)
 
@@ -208,6 +126,35 @@ function Runtime.Init()
                 end
             end
         end   
+    end)
+
+    getgenv().Connections.Staff_Notification = Players.PlayerAdded:Connect(function(PlayerInstance)
+        
+        if getgenv().Toggles.Staff_Notifications == true then
+            if Util:CheckStaff(Player) == true then
+                UI:MakeNotification({
+                    Name = "Staff Joined",
+                    Content = "User: "..PlayerInstance.Name,
+                    Image = "rbxassetid://9745241351",
+                    Time = 10
+                })
+            end
+        
+        end
+    end)
+
+    
+    getgenv().Connections.Player_Notification = Players.PlayerAdded:Connect(function(PlayerInstance)
+        
+        if getgenv().Toggles.Player_Notifications == true then
+            UI:MakeNotification({
+                Name = "Player Joined",
+                Content = "User: "..PlayerInstance.Name,
+                Image = "rbxassetid://9745241351",
+                Time = 1.5
+            })
+        
+        end
     end)
 end
 

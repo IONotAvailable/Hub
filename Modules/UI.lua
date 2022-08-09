@@ -258,5 +258,9 @@ function UI.Init()
     Library.Init()
 end
 
+function UI:Notify(Notification)
+    Library:MakeNotification(Notification)
+end
+
 -- Return
 return UI
