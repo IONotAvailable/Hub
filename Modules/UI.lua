@@ -5,75 +5,75 @@ local Library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shle
 local Window = Library:MakeWindow({Name = "Parkour by xgamer626#1683", HidePremium = true})
 
 local Combo_Tab = Window:MakeTab({
-	Name = "Combo",
-	Icon = "rbxassetid://3152629358",
-	PremiumOnly = false
+    Name = "Combo",
+    Icon = "rbxassetid://3152629358",
+    PremiumOnly = false
 })
 
 local Gearless_Tab = Window:MakeTab({
-	Name = "Gearless",
-	Icon = "rbxassetid://3152629574",
-	PremiumOnly = false
+    Name = "Gearless",
+    Icon = "rbxassetid://3152629574",
+    PremiumOnly = false
 })
 
 local Grappler_Tab = Window:MakeTab({
-	Name = "Grappler",
-	Icon = "rbxassetid://10494096196",
-	PremiumOnly = false
+    Name = "Grappler",
+    Icon = "rbxassetid://10494096196",
+    PremiumOnly = false
 })
 
 local Magrail_Tab = Window:MakeTab({
-	Name = "Magrail",
-	Icon = "rbxassetid://10493785715",
-	PremiumOnly = false
+    Name = "Magrail",
+    Icon = "rbxassetid://10493785715",
+    PremiumOnly = false
 })
 
 local Paraglider_Tab = Window:MakeTab({
-	Name = "Paraglider",
-	Icon = "rbxassetid://10493693841",
-	PremiumOnly = false
+    Name = "Paraglider",
+    Icon = "rbxassetid://10493693841",
+    PremiumOnly = false
 })
 
 local Wingsuit_Tab = Window:MakeTab({
-	Name = "Wingsuit",
-	Icon = "rbxassetid://10493701003",
-	PremiumOnly = false
+    Name = "Wingsuit",
+    Icon = "rbxassetid://10493701003",
+    PremiumOnly = false
 })
 
 local Cola_Tab = Window:MakeTab({
-	Name = "Cola",
-	Icon = "rbxassetid://9743223064",
-	PremiumOnly = false
+    Name = "Cola",
+    Icon = "rbxassetid://9743223064",
+    PremiumOnly = false
 })
 
 local Adrenaline_Tab = Window:MakeTab({
-	Name = "Adrenaline",
-	Icon = "rbxassetid://9744692070",
-	PremiumOnly = false
+    Name = "Adrenaline",
+    Icon = "rbxassetid://9744692070",
+    PremiumOnly = false
 })
 
 local Audio_Tab = Window:MakeTab({
-	Name = "Audio",
-	Icon = "rbxassetid://9743254397",
-	PremiumOnly = false
+    Name = "Audio",
+    Icon = "rbxassetid://9743254397",
+    PremiumOnly = false
 })
 
 local Misc_Tab = Window:MakeTab({
-	Name = "Miscellaneous",
-	Icon = "rbxassetid://9405931578",
-	PremiumOnly = false
+    Name = "Miscellaneous",
+    Icon = "rbxassetid://9405931578",
+    PremiumOnly = false
 })
 
 local Automatic_Tab = Window:MakeTab({
-	Name = "Automatic",
-	Icon = "rbxassetid://9742968183",
-	PremiumOnly = false
+    Name = "Automatic",
+    Icon = "rbxassetid://9742968183",
+    PremiumOnly = false
 })
 
 local Notifcations_Tab = Window:MakeTab({
-	Name = "Notifcations",
-	Icon = "rbxassetid://9745241351",
-	PremiumOnly = false
+    Name = "Notifcations",
+    Icon = "rbxassetid://9745241351",
+    PremiumOnly = false
 })
 
 -- Main
@@ -254,6 +254,8 @@ function UI.Init()
     Wingsuit_Tab:AddLabel("WIP")
     Cola_Tab:AddLabel("WIP")
     Audio_Tab:AddLabel("WIP")
+
+    Library.Init()
 end
 
 -- Return

@@ -1,9 +1,9 @@
 -- Services
-local Workspace = game:GetService("Workspace")
 local Players = game:GetService("Players")
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local VirtualInputManager = game:GetService("VirtualInputManager")
 
 -- Imports
 local UI = loadstring(readfile("xGamer626Parkour/Modules/UI.lua"))()
@@ -14,13 +14,15 @@ local Runtime = {}
 
 -- Locals
 local Player = Players.LocalPlayer
-local Backpack = Player.Backpack
+local PlayerGui = Player.PlayerGui
 
 function Variables()
     if getgenv().Activated == true then
-        getgenv().Connections.Stepped_RunService:Disconnect()
-        getgenv().Connections.Staff_Notifcation:Disconnect()
-        getgenv().Connections.Player_Notifcation:Disconnect()
+        pcall(function()
+            getgenv().Connections.Stepped_RunService:Disconnect()
+            getgenv().Connections.Staff_Notifcation:Disconnect()
+            getgenv().Connections.Player_Notifcation:Disconnect()
+        end)
     end
 
     getgenv().Activated = true
@@ -92,8 +94,10 @@ function Variables()
     }
     getgenv().Other = {
         Stimmed = false,
+        CanZipline = true,
     }
 end
+
 
 function Runtime.Init()
     -- Set/Reset our global environmental variables.
@@ -110,14 +114,9 @@ function Runtime.Init()
     -- Set/Reset our Connections
     getgenv().Connections.Stepped_RunService = RunService.RenderStepped:Connect(function()
         -- Only run this step if player exists
-        if Player.Character ~= nil then
-            -- Return if player is dead? lol
-            if Player.Character.Humanoid.Health < 0 then
-                return
-            end
-
+        if Player.Character:FindFirstChild("Humanoid") then
             -- Assign the games main variables to a global variable
-            getgenv().GameVariables = getupvalue(getsenv(Backpack.Main).resetAmmo, 1)
+            getgenv().GameVariables = getupvalue(getsenv(Player.Backpack:WaitForChild("Main")).resetAmmo, 1)
 
             -- Main toggling stuff
             if getgenv().Toggles.Anti_Dunce == true then
@@ -145,8 +144,6 @@ function Runtime.Init()
             if getgenv().Toggles.Infinite_Wallboost == true then
                 getgenv().GameVariables.numWallclimb = math.huge
                 getgenv().GameVariables.lastWallClimb = 0
-            else
-                getgenv().GameVariables.numWallclimb = 2
             end
 
             if getgenv().Toggles.Infinite_Charge == true then
@@ -154,6 +151,40 @@ function Runtime.Init()
             else
                 getgenv().GameVariables.chargeCooldown = 2
             end
+
+            local Zipline_Text = PlayerGui.GameplayUI.Zipline
+            local Zipline_Keybind = ReplicatedStorage.PlayerData[Player.Name].Settings.Keybinds.E
+            local Shift_Keybind = ReplicatedStorage.PlayerData[Player.Name].Settings.Keybinds.Shift
+            -- so cancer lol
+            if getgenv().Toggles.Auto_CatchZipline == true then
+                if getgenv().GameVariables.ziplining == false then
+                    if Zipline_Text.Visible == true then
+                        if Player.Character.Humanoid.FloorMaterial == Enum.Material.Air then
+                            if getgenv().Other.CanZipline == true then
+                                task.spawn(function()
+                                    getgenv().Other.CanZipline = false
+                                    VirtualInputManager:SendKeyEvent(true, Shift_Keybind.Value, false, game)
+                                    task.wait(0.05)
+                                    VirtualInputManager:SendKeyEvent(true, Zipline_Keybind.Value, false, game)
+                                    task.wait(.05)
+                                    VirtualInputManager:SendKeyEvent(false, Shift_Keybind.Value, false, game)
+                                    VirtualInputManager:SendKeyEvent(false, Zipline_Keybind.Value, false, game)
+                                end)
+                            end
+                        end
+                    end
+                end
+            end
+
+            if Player.Character.Humanoid.FloorMaterial ~= Enum.Material.Air then
+                -- Only reset the debounce if they're on the floor
+                if getgenv().GameVariables.ziplining == false then
+                    task.delay(1, function()
+                        getgenv().Other.CanZipline = true 
+                    end)
+                end
+            end
+
         end
     end)
 

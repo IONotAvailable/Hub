@@ -1,3 +1,23 @@
+--[[
+
+$$$$$$$\                     $$\                                     
+$$  __$$\                    $$ |                                    
+$$ |  $$ |$$$$$$\   $$$$$$\  $$ |  $$\  $$$$$$\  $$\   $$\  $$$$$$\  
+$$$$$$$  |\____$$\ $$  __$$\ $$ | $$  |$$  __$$\ $$ |  $$ |$$  __$$\ 
+$$  ____/ $$$$$$$ |$$ |  \__|$$$$$$  / $$ /  $$ |$$ |  $$ |$$ |  \__|
+$$ |     $$  __$$ |$$ |      $$  _$$<  $$ |  $$ |$$ |  $$ |$$ |      
+$$ |     \$$$$$$$ |$$ |      $$ | \$$\ \$$$$$$  |\$$$$$$  |$$ |      
+\__|      \_______|\__|      \__|  \__| \______/  \______/ \__|      
+                                                                     
+                                                                     
+Over the last month or so, I've been dedicating my spare time to working on this script while learning new things about scripting.
+This is open source, mainly because I don't really care for obfuscation and I feel like open sourcing a script relieves a ton of pressure. 
+This is my second ever release of a script, my first one being for a game called Bulwark, which went well, surprisingly.
+If there are any tips on how I can organize my code better, or if there are any issues with the script, just give me a message on V3rmillion or Discord.
+
+xgamer626#1683
+]]
+
 -- Functions
 local function Import_Files()
     -- Check for folder.
