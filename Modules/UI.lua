@@ -162,19 +162,6 @@ function UI.Init()
             end
         end    
     })
-    
-    Gearless_Tab:AddSlider({
-        Name = "Slide Speed",
-        Min = 1,
-        Max = 1000,
-        Default = 1,
-        Color = Color3.fromRGB(255,255,255),
-        Increment = 5,
-        ValueName = nil,
-        Callback = function(Value)
-            getgenv().Sliders.Slide_Speed = Value
-        end    
-    })
 
     Gearless_Tab:AddBind({
         Name = "Walk Speed",
@@ -186,6 +173,19 @@ function UI.Init()
             elseif getgenv().Toggles.Walk_Speed == false then
                 getgenv().Toggles.Walk_Speed = true
             end
+        end    
+    })
+
+    Gearless_Tab:AddSlider({
+        Name = "Slide Speed",
+        Min = 1,
+        Max = 1000,
+        Default = 1,
+        Color = Color3.fromRGB(255,255,255),
+        Increment = 5,
+        ValueName = nil,
+        Callback = function(Value)
+            getgenv().Sliders.Slide_Speed = Value
         end    
     })
 
