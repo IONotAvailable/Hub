@@ -107,13 +107,13 @@ function UI.Init()
         end    
     })
 
-    -- Gearless_Tab:AddToggle({
-    --     Name = "Infinite Wallrun",
-    --     Default = false,
-    --     Callback = function(Value)
-    --         getgenv().Toggles.Infinite_Wallrun = Value
-    --     end    
-    -- })
+    Gearless_Tab:AddToggle({
+        Name = "Infinite Wallrun",
+        Default = false,
+        Callback = function(Value)
+            getgenv().Toggles.Infinite_Wallrun = Value
+        end    
+    })
 
     Gearless_Tab:AddToggle({
         Name = "Infinite Wallboost",
@@ -173,6 +173,32 @@ function UI.Init()
         ValueName = nil,
         Callback = function(Value)
             getgenv().Sliders.Slide_Speed = Value
+        end    
+    })
+
+    Gearless_Tab:AddBind({
+        Name = "Walk Speed",
+        Default = Enum.KeyCode.V,
+        Hold = false,
+        Callback = function()
+            if getgenv().Toggles.Walk_Speed == true then
+                getgenv().Toggles.Walk_Speed = false
+            elseif getgenv().Toggles.Walk_Speed == false then
+                getgenv().Toggles.Walk_Speed = true
+            end
+        end    
+    })
+
+    Gearless_Tab:AddSlider({
+        Name = "Walk Speed",
+        Min = 1,
+        Max = 20,
+        Default = 1,
+        Color = Color3.fromRGB(255,255,255),
+        Increment = 1,
+        ValueName = nil,
+        Callback = function(Value)
+            getgenv().Sliders.Walk_Speed = Value
         end    
     })
     

@@ -59,6 +59,17 @@ function Runtime.Init()
                 getgenv().GameVariables.slidespeed = getgenv().Sliders.Slide_Speed
             end
 
+            if getgenv().Toggles.Infinite_Wallrun == true then
+                getgenv().GameVariables.recentWallruns = 0
+                getgenv().GameVariables.lastWR = 0
+                getgenv().GameVariables.maxWallrun = math.huge
+                getgenv().GameVariables.numWallrun = math.huge
+            end
+
+            if getgenv().Toggles.Walk_Speed == true then
+                getgenv().GameVariables.walkspeedMult = getgenv().Sliders.Walk_Speed
+            end
+
             if getgenv().Toggles.Infinite_Wallboost == true then
                 getgenv().GameVariables.numWallclimb = math.huge
                 getgenv().GameVariables.lastWallClimb = 0

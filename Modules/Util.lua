@@ -62,6 +62,7 @@ function Util:Variables()
         Auto_CatchZipline = false,
         Ammo_Reset = false,
         Slide_Speed = false,
+        Walk_Speed = false,
 
         -- Misc
         God_Mode = false,
@@ -74,6 +75,7 @@ function Util:Variables()
         Bag_Notifications = false,
     }
     getgenv().Sliders = {
+        Walk_Speed = 1,
         Slide_Speed = 1,
         Combo_Level = 1,
     }
