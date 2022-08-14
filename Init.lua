@@ -28,7 +28,6 @@ Features Coming Soon :
 • Staff Notifcations
 • Bag Esp
 • Bag Notifications
-• Infinite Wallrun
 • Infinite Wingsuit Stamina
 • Infinite Glider Stamina
 • Infinite Magrail Gear
