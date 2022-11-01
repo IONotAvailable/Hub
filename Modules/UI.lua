@@ -281,14 +281,7 @@ function UI.Init()
         end    
     })
     
-    Cola_Tab:AddToggle({
-        Name = "Infinite Cola",
-        Default = false,
-        Callback = function(Value)
-            getgenv().Toggles.Infinite_Cola = Value
-        end    
-    })
-
+    Cola_Tab:AddLabel("WIP")
     Automatic_Tab:AddLabel("WIP")
     Grappler_Tab:AddLabel("WIP")
     Paraglider_Tab:AddLabel("WIP")

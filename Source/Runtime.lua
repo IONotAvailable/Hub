@@ -43,10 +43,6 @@ function Runtime.Init()
                 Shares.dunces[Player.Name] = false
             end
 
-            if getgenv().Toggles.Infinte_Cola then
-                getgenv().GameVariables.lastDrink = 0
-            end
-
             if getgenv().Toggles.Infinite_Magrail then
                 getgenv().GameVariables.lastMagSlap = 0
             end
