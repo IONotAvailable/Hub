@@ -18,25 +18,25 @@ local Gearless_Tab = Window:MakeTab({
 
 local Grappler_Tab = Window:MakeTab({
     Name = "Grappler",
-    Icon = "rbxassetid://10494096196",
+    Icon = string.format("rbxthumb://type=Asset&id=%s&w=420&h=420",tonumber(10493686822)),
     PremiumOnly = false
 })
 
 local Magrail_Tab = Window:MakeTab({
     Name = "Magrail",
-    Icon = "rbxassetid://10493785715",
+    Icon = string.format("rbxthumb://type=Asset&id=%s&w=420&h=420",tonumber(10493687634)),
     PremiumOnly = false
 })
 
 local Paraglider_Tab = Window:MakeTab({
     Name = "Paraglider",
-    Icon = "rbxassetid://10493693841",
+    Icon = string.format("rbxthumb://type=Asset&id=%s&w=420&h=420",tonumber(10493693841)),
     PremiumOnly = false
 })
 
 local Wingsuit_Tab = Window:MakeTab({
     Name = "Wingsuit",
-    Icon = "rbxassetid://10493701003",
+    Icon = string.format("rbxthumb://type=Asset&id=%s&w=420&h=420",tonumber(10493701003)),
     PremiumOnly = false
 })
 
@@ -221,7 +221,7 @@ function UI.Init()
     Misc_Tab:AddButton({
         Name = "Unlock Badges",
         Callback = function()
-    
+            
         end
     })
     
@@ -272,13 +272,27 @@ function UI.Init()
             getgenv().Toggles.Bag_Notifications = Value
         end    
     })
+
+    Magrail_Tab:AddToggle({
+        Name = "Infinite Magrail",
+        Default = false,
+        Callback = function(Value)
+            getgenv().Toggles.Infinite_Magrail = Value
+        end    
+    })
     
+    Cola_Tab:AddToggle({
+        Name = "Infinite Cola",
+        Default = false,
+        Callback = function(Value)
+            getgenv().Toggles.Infinite_Cola = Value
+        end    
+    })
+
     Automatic_Tab:AddLabel("WIP")
     Grappler_Tab:AddLabel("WIP")
-    Magrail_Tab:AddLabel("WIP")
     Paraglider_Tab:AddLabel("WIP")
     Wingsuit_Tab:AddLabel("WIP")
-    Cola_Tab:AddLabel("WIP")
     Audio_Tab:AddLabel("WIP")
 
     Library.Init()
