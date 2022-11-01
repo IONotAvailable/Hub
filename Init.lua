@@ -30,7 +30,6 @@ Features Coming Soon :
 • Bag Notifications
 • Infinite Wingsuit Stamina
 • Infinite Glider Stamina
-• Infinite Magrail Gear
 • Infinite Grappler Gear
 • Instant Grappler Cast
 • Autofarm Points                                            
