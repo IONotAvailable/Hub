@@ -51,7 +51,7 @@ function Runtime.Init()
                 getgenv().GameVariables.comboTime = 1000
                 getgenv().GameVariables.comboHealth = 100
                 getgenv().GameVariables.comboXp = 1
-                getgenv().GameVariables.comboLevel = getgenv().Sliders.Combo_Level
+                getgenv().GameVariables.comboLevel = 5
             end
 
             if getgenv().Toggles.Flow_Active == true then
